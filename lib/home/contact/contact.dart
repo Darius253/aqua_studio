@@ -13,85 +13,37 @@ class _ContactState extends State<Contact> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 50),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'REQUEST SERVICE',
-              style: TextStyle(
-                fontFamily: 'Cocomat Ultra',
-                fontSize: 40,
-                color: Color.fromARGB(255, 141, 141, 141),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 50),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'REQUEST SERVICE',
+                style: TextStyle(
+                  fontFamily: 'Cocomat Ultra',
+                  fontSize: 40,
+                  color: Color.fromARGB(255, 141, 141, 141),
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-                  const TextBox(
-                      color: Color.fromARGB(255, 170, 169, 169),
-                      hintText: 'TYPE YOUR MESSAGE HERE'),
-                  const SizedBox(width: 100),
-                  Expanded(
-                    flex: 1,
-                    child: InkWell(
-                        onTap: () {},
-                        child: const Text(
-                          'YOUTUBE',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            fontFamily: 'Cocomat Ultra',
-                            fontSize: 50,
-                            color: Color.fromARGB(255, 245, 243, 243),
-                          ),
-                        )),
-                  )
-                ]),
-                const SizedBox(height: 20),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
+              const SizedBox(
+                height: 20,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
                     const TextBox(
                         color: Color.fromARGB(255, 170, 169, 169),
-                        hintText: 'FULL NAME | ORGANISATION NAME'),
+                        hintText: 'TYPE YOUR MESSAGE HERE'),
                     const SizedBox(width: 100),
                     Expanded(
                       flex: 1,
                       child: InkWell(
                           onTap: () {},
                           child: const Text(
-                            'VIMEO',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              fontFamily: 'Cocomat Ultra',
-                              fontSize: 50,
-                              color: Color.fromARGB(255, 245, 243, 243),
-                            ),
-                          )),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    const TextBox(
-                        color: Color.fromARGB(255, 170, 169, 169),
-                        hintText: 'E-MAIL'),
-                    const SizedBox(
-                      width: 100,
-                    ),
-                    Expanded(
-                      flex: 1,
-                      child: InkWell(
-                          onTap: () {},
-                          child: const Text(
-                            'INSTAGRAM',
+                            'YOUTUBE',
                             textAlign: TextAlign.left,
                             style: TextStyle(
                               fontFamily: 'Cocomat Ultra',
@@ -100,35 +52,85 @@ class _ContactState extends State<Contact> {
                             ),
                           )),
                     )
-                  ],
-                ),
-                const SizedBox(height: 40),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Expanded(child: Row(children: const [Button()])),
-                    const SizedBox(
-                      width: 100,
-                    ),
-                    Expanded(
-                      flex: 1,
-                      child: InkWell(
-                          onTap: () {},
-                          child: const Text(
-                            'DRIBBLE',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              fontFamily: 'Cocomat Ultra',
-                              fontSize: 50,
-                              color: Color.fromARGB(255, 245, 243, 243),
-                            ),
-                          )),
-                    ),
-                  ],
-                )
-              ],
-            ),
-          ],
+                  ]),
+                  const SizedBox(height: 20),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const TextBox(
+                          color: Color.fromARGB(255, 170, 169, 169),
+                          hintText: 'FULL NAME | ORGANISATION NAME'),
+                      const SizedBox(width: 100),
+                      Expanded(
+                        flex: 1,
+                        child: InkWell(
+                            onTap: () {},
+                            child: const Text(
+                              'VIMEO',
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                fontFamily: 'Cocomat Ultra',
+                                fontSize: 50,
+                                color: Color.fromARGB(255, 245, 243, 243),
+                              ),
+                            )),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const TextBox(
+                          color: Color.fromARGB(255, 170, 169, 169),
+                          hintText: 'E-MAIL'),
+                      const SizedBox(
+                        width: 100,
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: InkWell(
+                            onTap: () {},
+                            child: const Text(
+                              'INSTAGRAM',
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                fontFamily: 'Cocomat Ultra',
+                                fontSize: 50,
+                                color: Color.fromARGB(255, 245, 243, 243),
+                              ),
+                            )),
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 40),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Expanded(child: Row(children: const [Button()])),
+                      const SizedBox(
+                        width: 100,
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: InkWell(
+                            onTap: () {},
+                            child: const Text(
+                              'DRIBBLE',
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                fontFamily: 'Cocomat Ultra',
+                                fontSize: 50,
+                                color: Color.fromARGB(255, 245, 243, 243),
+                              ),
+                            )),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

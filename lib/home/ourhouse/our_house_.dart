@@ -22,18 +22,14 @@ class _OurHouseState extends State<OurHouse> {
         backgroundColor: Colors.black,
         body: Stack(
           children: [
-            const Padding(padding: EdgeInsets.symmetric(vertical: 100)),
-            PageView(
-              pageSnapping: true,
-              scrollDirection: Axis.vertical,
-              padEnds: false,
-              onPageChanged: (index) {
-                setState(() {
-                  pageIndex = index;
-                });
-              },
+            const Padding(padding: EdgeInsets.symmetric(vertical: 50)),
+            ListView.separated(
               controller: _pageController,
-              children: pages,
+              separatorBuilder: (context, index) => const SizedBox(),
+              itemCount: 1,
+              itemBuilder: (context, index) => Column(
+                children: const [FirstScreen(), SecondScreen(), ThirdScreen()],
+              ),
             ),
           ],
         ));

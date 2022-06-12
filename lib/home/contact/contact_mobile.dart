@@ -9,33 +9,22 @@ class ContactMobile extends StatefulWidget {
 }
 
 class _ContactMobileState extends State<ContactMobile> {
-  final PageController _pageController = PageController();
   int pageIndex = 0;
-  List<Widget> pages = [
-    const ContactFirstScreen(),
-    const ContactSecondScreen(),
-  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.black,
         body: Stack(
-          children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 40, horizontal: 20.0),
+          children: const [
+            Padding(
+              padding: EdgeInsets.only(
+                top: 40,
+                left: 20.0,
+              ),
               child: TopTitle(text: 'CONTACT'),
             ),
-            PageView(
-              pageSnapping: true,
-              scrollDirection: Axis.vertical,
-              onPageChanged: (index) {
-                setState(() {
-                  pageIndex = index;
-                });
-              },
-              controller: _pageController,
-              children: pages,
-            ),
+            ContactFirstScreen()
           ],
         ));
   }

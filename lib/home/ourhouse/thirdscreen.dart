@@ -6,17 +6,19 @@ class ThirdScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 80.0, vertical: 50),
+        padding: const EdgeInsets.symmetric(horizontal: 80.0, vertical: 100),
         child: Column(
           children: [
             Row(
               children: [
                 Container(
                   color: const Color.fromARGB(51, 51, 51, 51),
-                  width: 300,
-                  height: 150,
+                  width: 480,
+                  height: 200,
                 ),
-                const SizedBox(width: 15),
+                const SizedBox(
+                  width: 80,
+                ),
                 const Text(
                   'SHORT FILMS',
                   style: TextStyle(
@@ -33,10 +35,12 @@ class ThirdScreen extends StatelessWidget {
               children: [
                 Container(
                   color: const Color.fromARGB(51, 51, 51, 51),
-                  height: 150,
-                  width: 300,
+                  width: 480,
+                  height: 200,
                 ),
-                const SizedBox(width: 15),
+                const SizedBox(
+                  width: 80,
+                ),
                 const Text(
                   'LOGO ANIMATION',
                   style: TextStyle(

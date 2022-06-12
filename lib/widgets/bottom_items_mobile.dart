@@ -4,11 +4,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 class BottomMobileItems extends StatelessWidget {
   final IconData icon;
   final VoidCallback openMenu;
-  const BottomMobileItems(
-      {Key? key,
-      required this.icon,
-      required this.openMenu,p})
-      : super(key: key);
+  final Function scrollToIndex;
+  const BottomMobileItems({
+    Key? key,
+    required this.icon,
+    required this.scrollToIndex,
+    required this.openMenu,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +19,9 @@ class BottomMobileItems extends StatelessWidget {
       child: Row(
         children: [
           GestureDetector(
+            onTap: () {
+              scrollToIndex(0);
+            },
             child: SvgPicture.asset(
               'assets/images/Black-04.svg',
               width: 200,
