@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../shared/exports.dart';
-
 class BottomItems extends StatelessWidget {
   final VoidCallback openMenu;
+  final Function scrollToIndex;
   final String text;
   const BottomItems({
     Key? key,
     required this.openMenu,
+    required this.scrollToIndex,
     required this.text,
   }) : super(key: key);
 
@@ -18,12 +18,11 @@ class BottomItems extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         GestureDetector(
-          onTap: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => const Home())),
+          onTap: () => scrollToIndex(0),
           child: SvgPicture.asset(
             'assets/images/Black-04.svg',
             color: Colors.white,
-            width: 480,
+            width: 450,
           ),
         ),
         const Expanded(child: SizedBox()),
@@ -39,7 +38,7 @@ class BottomItems extends StatelessWidget {
           width: 20,
         ),
         const Center(
-          child:  Icon(
+          child: Icon(
             Icons.circle_rounded,
             color: Colors.white,
             size: 8,
