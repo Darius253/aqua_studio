@@ -46,17 +46,10 @@ class _HomeState extends State<Home> {
               itemScrollController: viewController.itemScrollController,
             ),
           ),
-          ReponsiveWidget(
-            largeScreen: const NavBar(),
-            mediumScreen: const NavBar(),
-            smallScreen: Padding(
-              padding: const EdgeInsets.only(top: 550),
-              child: BottomMobileItems(
-                scrollToIndex: (pageIndex) => widget.scrollToIndex!(0),
-                icon: Icons.menu,
-                openMenu: () => setState(() => openMenu = true),
-              ),
-            ),
+          const ReponsiveWidget(
+            largeScreen: NavBar(),
+            mediumScreen: NavBar(),
+            smallScreen: BottomMobileItems(),
           ),
         ],
       ),
