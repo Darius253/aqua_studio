@@ -6,7 +6,7 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 80),
+      padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 80),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -30,15 +30,16 @@ class FirstScreen extends StatelessWidget {
             ),
             Expanded(
               child: Text(
-                  ' A digital creative agency that designs and\ndevelops unique brand identies and tailor\nmade digital solutions.',
+                  'A digital creative agency that designs and\ndevelops unique brand identies and tailor\nmade digital solutions.',
                   textAlign: TextAlign.justify,
+                  softWrap: false,
                   style: TextStyle(
-                      height: 2,
+                      height: 1,
                       fontFamily: 'Macaria',
                       fontSize: 20,
                       color: Color.fromARGB(255, 231, 226, 226))),
             ),
-          ])
+          ]),
         ],
       ),
     );
