@@ -9,29 +9,25 @@ class OurHouse extends StatefulWidget {
 }
 
 class _OurHouseState extends State<OurHouse> {
-  final PageController _pageController = PageController();
-  int pageIndex = 0;
   List<Widget> pages = [
     const FirstScreen(),
     const SecondScreen(),
     const ThirdScreen()
   ];
+
+  final ViewController viewController = Get.find();
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.black,
-        body: Stack(
-          children: [
-            const Padding(padding: EdgeInsets.symmetric(vertical: 50)),
-            ListView.separated(
-              controller: _pageController,
-              separatorBuilder: (context, index) => const SizedBox(),
-              itemCount: 1,
-              itemBuilder: (context, index) => Column(
-                children: const [FirstScreen(), SecondScreen(), ThirdScreen()],
-              ),
-            ),
-          ],
-        ));
+    return VisibilityDetector(
+      key: const Key('our house'),
+      onVisibilityChanged: (VisibilityInfo visibilityInfo) {
+        if (visibilityInfo.visibleFraction > 0.2) {
+          viewController.currentView.value = Views.ourHouse;
+          viewController.currentViewIndex.value = 1;
+        }
+      },
+      child: Column(children: pages, mainAxisSize: MainAxisSize.min),
+    );
   }
 }

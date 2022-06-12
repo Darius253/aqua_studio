@@ -9,14 +9,14 @@ const int customScreenSize = 1100;
 class ReponsiveWidget extends StatelessWidget {
   final Widget largeScreen;
   final Widget smallScreen;
-  final   Widget mediumScreen;
+  final Widget? mediumScreen;
 
-    const ReponsiveWidget(
-      {Key? key,
-      required this.mediumScreen,
-      required this.largeScreen,
-      required this.smallScreen})
-      : super(key: key);
+  const ReponsiveWidget({
+    Key? key,
+    this.mediumScreen,
+    required this.largeScreen,
+    required this.smallScreen,
+  }) : super(key: key);
 
   static bool isSmallScreen(BuildContext context) =>
       MediaQuery.of(context).size.width < mediumScreenSize;
@@ -38,7 +38,7 @@ class ReponsiveWidget extends StatelessWidget {
       if (_width >= largeScreenSize) {
         return largeScreen;
       } else if (_width < largeScreenSize && _width >= mediumScreenSize) {
-        return mediumScreen;
+        return mediumScreen ?? const SizedBox.shrink();
       } else {
         return smallScreen;
       }
