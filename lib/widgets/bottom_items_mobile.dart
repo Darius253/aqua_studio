@@ -1,26 +1,37 @@
+import 'package:aqua_studio/home/menu/menu_mobile.dart';
+import 'package:aqua_studio/shared/exports.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-class BottomMobileItems extends StatelessWidget {
-  final IconData icon;
-  final VoidCallback openMenu;
-  final Function scrollToIndex;
+class BottomMobileItems extends StatefulWidget {
   const BottomMobileItems({
     Key? key,
-    required this.icon,
-    required this.scrollToIndex,
-    required this.openMenu,
   }) : super(key: key);
+
+  @override
+  State<BottomMobileItems> createState() => _BottomMobileItemsState();
+}
+
+class _BottomMobileItemsState extends State<BottomMobileItems> {
+  final ViewController viewController = Get.find();
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      padding: EdgeInsets.only(
+        top: Get.height * 0.02,
+        bottom: Get.height * 0.04,
+        left: 30,
+        right: 20,
+      ),
       child: Row(
         children: [
           GestureDetector(
             onTap: () {
-              scrollToIndex(0);
+              viewController.itemScrollController.scrollTo(
+                index: 0,
+                curve: Curves.easeInOutCubic,
+                duration: const Duration(milliseconds: 1500),
+              );
             },
             child: SvgPicture.asset(
               'assets/images/Black-04.svg',
@@ -29,12 +40,32 @@ class BottomMobileItems extends StatelessWidget {
             ),
           ),
           const Expanded(child: SizedBox()),
-          InkWell(
-              onTap: openMenu,
-              child: Icon(
-                icon,
-                color: Colors.white,
-              )),
+          DelayedDisplay(
+            delay: const Duration(milliseconds: 300),
+            child: viewController.isMenuOpen.value
+                ? InkWell(
+                    onTap: () {
+                      viewController.isMenuOpen.value = false;
+                      Get.back();
+                    },
+                    child: const Icon(
+                      Icons.close,
+                      color: Colors.white,
+                    ))
+                : InkWell(
+                    onTap: () {
+                      Get.to(
+                        () => const MenuMobile(),
+                        routeName: 'menu',
+                        transition: Transition.downToUp,
+                      );
+                      viewController.isMenuOpen.value = true;
+                    },
+                    child: const Icon(
+                      Icons.menu,
+                      color: Colors.white,
+                    )),
+          ),
         ],
       ),
     );
