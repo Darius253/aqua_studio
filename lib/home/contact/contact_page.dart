@@ -12,10 +12,10 @@ class ContactPage extends StatefulWidget {
 class _ContactPageState extends State<ContactPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        body: ReponsiveWidget(
-            mediumScreen: Contact(),
-            largeScreen: Contact(),
-            smallScreen: ContactMobile()));
+    return const ReponsiveWidget(
+      mediumScreen: Contact(),
+      largeScreen: Contact(),
+      smallScreen: ContactMobile(),
+    );
   }
 }

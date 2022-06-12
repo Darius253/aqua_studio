@@ -14,32 +14,39 @@ class FirstScreen extends StatelessWidget {
             'We Move The\nDigital Industry',
             textAlign: TextAlign.left,
             style: TextStyle(
-                height: 1.5,
-                fontSize: 100,
-                color: Colors.white,
-                fontFamily: 'Macaria'),
+              height: 1.2,
+              fontSize: 100.0,
+              color: Colors.white,
+              fontFamily: 'Macaria',
+            ),
           ),
-          Row(mainAxisAlignment: MainAxisAlignment.start, children: const [
-            Text(
-              'Forward',
-              style: TextStyle(
-                  fontSize: 100, color: Colors.white, fontFamily: 'Macaria'),
-            ),
-            SizedBox(
-              width: 50,
-            ),
-            Expanded(
-              child: Text(
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: const [
+              Text(
+                'Forward',
+                style: TextStyle(
+                  fontSize: 100.0,
+                  color: Colors.white,
+                  fontFamily: 'Macaria',
+                ),
+              ),
+              SizedBox(width: 50.0),
+              Flexible(
+                child: Text(
                   'A digital creative agency that designs and\ndevelops unique brand identies and tailor\nmade digital solutions.',
                   textAlign: TextAlign.justify,
                   softWrap: false,
                   style: TextStyle(
-                      height: 1,
-                      fontFamily: 'Macaria',
-                      fontSize: 20,
-                      color: Color.fromARGB(255, 231, 226, 226))),
-            ),
-          ]),
+                    height: 1.5,
+                    fontSize: 20.0,
+                    fontFamily: 'Macaria',
+                    color: Color.fromARGB(255, 231, 226, 226),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
