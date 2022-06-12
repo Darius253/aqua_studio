@@ -11,12 +11,10 @@ class ShowReel extends StatefulWidget {
 class _ShowReelState extends State<ShowReel> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        backgroundColor: Colors.black,
-        body: ReponsiveWidget(
-          largeScreen: ShowReelWeb(),
-          mediumScreen: ShowReelWeb(),
-          smallScreen: ShowReelMobile(),
-        ));
+    return const ReponsiveWidget(
+      largeScreen: ShowReelWeb(),
+      mediumScreen: ShowReelWeb(),
+      smallScreen: ShowReelMobile(),
+    );
   }
 }
