@@ -11,11 +11,10 @@ class OurHousePage extends StatefulWidget {
 class _OurHousePageState extends State<OurHousePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        body: ReponsiveWidget(
+    return const ReponsiveWidget(
       largeScreen: OurHouse(),
       mediumScreen: OurHouse(),
       smallScreen: OurHouseMobile(),
-    ));
+    );
   }
 }
