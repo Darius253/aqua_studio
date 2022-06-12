@@ -9,28 +9,43 @@ class ShowReelMobile extends StatefulWidget {
 }
 
 class _ShowReelMobileState extends State<ShowReelMobile> {
+  final ViewController viewController = Get.find();
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const TopTitle(
-              text: 'SHOWREEL',
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Container(
-              height: 450,
-              color: Colors.grey,
-            ),
-          ],
+    return Column(
+      children: [
+        const Padding(
+          padding: EdgeInsets.only(
+            top: 40.0,
+            left: 30,
+            bottom: 20,
+          ),
+          child: TopTitle(text: 'SHOWREEL'),
         ),
-      ),
+        VisibilityDetector(
+          key: const Key('show reel'),
+          onVisibilityChanged: (visibilityInfo) {
+            if (visibilityInfo.visibleFraction > 0.2) {
+              viewController.currentView.value = Views.reel;
+              viewController.currentViewIndex.value = 0;
+            }
+          },
+          child: Padding(
+            padding: const EdgeInsets.only(
+              top: 10.0,
+              left: 30.0,
+              right: 20.0,
+            ),
+            child: Image.asset(
+              Images.reel,
+              fit: BoxFit.cover,
+              width: double.infinity,
+              height: Get.height * 0.7,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

@@ -2,107 +2,68 @@ import 'package:aqua_studio/shared/exports.dart';
 import 'package:flutter/material.dart';
 
 class MenuMobile extends StatefulWidget {
-  final int index;
-  final VoidCallback onClose;
-  final Function scrollToIndex;
-  const MenuMobile(
-      {Key? key,
-      required this.onClose,
-      required this.scrollToIndex,
-      required this.index})
-      : super(key: key);
+  const MenuMobile({Key? key}) : super(key: key);
 
   @override
   State<MenuMobile> createState() => _MenuMobileState();
 }
 
 class _MenuMobileState extends State<MenuMobile> {
+  final ViewController viewController = Get.find();
+  final List<String> pages = ['SHOWREEL', 'OUR HOUSE', 'CONTACT'];
+
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 20,
-      ),
-      child: Column(
+    return Scaffold(
+      body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 40),
-            child: TopTitle(text: 'MENU'),
-          ),
-          GestureDetector(
-              onTap: () {
-                widget.scrollToIndex(0);
-                widget.onClose();
-              },
-              child: Text('SHOWREEL',
-                  style: TextStyle(
-                      fontFamily: 'Cocomat',
-                      fontSize: 25,
-                      color: widget.index == 0
-                          ? const Color.fromARGB(255, 70, 69, 69)
-                          : Colors.white))),
-          const SizedBox(
-            height: 60,
-          ),
-          GestureDetector(
-            onTap: () {
-              widget.scrollToIndex(1);
-              widget.onClose();
-            },
-            child: Text(
-              'OUR HOUSE',
-              style: TextStyle(
-                  fontFamily: 'Cocomat Ultra',
-                  fontSize: 25,
-                  color: widget.index == 1
-                      ? const Color.fromARGB(255, 70, 69, 69)
-                      : Colors.white),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: 100.0,
+                horizontal: 30,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: List.generate(pages.length, (index) {
+                  return Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      InkWell(
+                        onTap: () async {
+                          viewController.isMenuOpen.value = false;
+                          viewController.currentViewIndex.value = index;
+                          Get.back();
+                          await Future.delayed(
+                            const Duration(milliseconds: 300),
+                          );
+                          viewController.itemScrollController.scrollTo(
+                            index: index,
+                            curve: Curves.easeInOutCubic,
+                            duration: const Duration(milliseconds: 2000),
+                          );
+                        },
+                        child: Text(
+                          pages[index],
+                          style: TextStyle(
+                            fontSize: 25.0,
+                            fontFamily: 'Cocomat Ultra',
+                            color:
+                                index == viewController.currentViewIndex.value
+                                    ? const Color.fromARGB(255, 70, 69, 69)
+                                    : Colors.white,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 60.0),
+                    ],
+                  );
+                }),
+              ),
             ),
           ),
-          const SizedBox(
-            height: 60,
-          ),
-          GestureDetector(
-              onTap: () {
-                widget.scrollToIndex(2);
-                widget.onClose();
-              },
-              child: Text('CONTACT',
-                  style: TextStyle(
-                      fontFamily: 'Cocomat',
-                      fontSize: 25,
-                      color: widget.index == 2
-                          ? const Color.fromARGB(255, 70, 69, 69)
-                          : Colors.white))),
-          const SizedBox(
-            height: 200,
-          ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              GestureDetector(
-                onTap: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Home())),
-                child: SvgPicture.asset(
-                  'images/Black-04.svg',
-                  color: Colors.white,
-                  width: 200,
-                ),
-              ),
-              const Expanded(child: SizedBox()),
-              InkWell(
-                onTap: () => widget.onClose(),
-                child: const Icon(
-                  Icons.close,
-                  color: Colors.white,
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              )
-            ],
-          )
+          const BottomMobileItems(),
         ],
       ),
     );

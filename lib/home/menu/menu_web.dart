@@ -51,7 +51,7 @@ class _MenuWebState extends State<MenuWeb> {
                             fontFamily: 'Cocomat Ultra',
                             color:
                                 index == viewController.currentViewIndex.value
-                                    ? const Color.fromARGB(255, 70, 69, 69)
+                                    ?const Color.fromARGB(255, 70, 69, 69)
                                     : Colors.white,
                           ),
                         ),

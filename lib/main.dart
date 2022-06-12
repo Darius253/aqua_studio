@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Aqua Studio',
-      home: const Home(),
+      home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Colors.black,
