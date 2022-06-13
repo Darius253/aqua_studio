@@ -27,7 +27,8 @@ class _OurHouseState extends State<OurHouse> {
           viewController.currentViewIndex.value = 1;
         }
       },
-      child: Column(children: pages, mainAxisSize: MainAxisSize.min),
+      child: SingleChildScrollView(
+          child: Column(children: pages, mainAxisSize: MainAxisSize.min)),
     );
   }
 }
