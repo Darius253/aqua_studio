@@ -6,7 +6,7 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 80),
+      padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 80),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -16,7 +16,7 @@ class FirstScreen extends StatelessWidget {
             style: TextStyle(
               height: 1.2,
               fontSize: 100.0,
-              color: Colors.white,
+              color: Color.fromARGB(255, 255, 255, 255),
               fontFamily: 'Macaria',
             ),
           ),
