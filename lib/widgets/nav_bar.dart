@@ -44,7 +44,8 @@ class _NavBarState extends State<NavBar> {
               child: SvgPicture.asset(
                 'assets/images/Black-04.svg',
                 color: Colors.white,
-                width: 450,
+                // width: 450,
+                height: Get.height * 0.06,
               ),
             ),
             DelayedDisplay(
@@ -58,7 +59,7 @@ class _NavBarState extends State<NavBar> {
                       child: const Text(
                         'CLOSE',
                         style: TextStyle(
-                          fontSize: 20.0,
+                          fontSize: 16.0,
                           color: Colors.white,
                           fontFamily: 'Macaria',
                           fontWeight: FontWeight.w700,
@@ -73,13 +74,13 @@ class _NavBarState extends State<NavBar> {
                             : Text(
                                 title,
                                 style: const TextStyle(
-                                  fontSize: 20.0,
+                                  fontSize: 16.0,
                                   color: Colors.white,
                                   fontFamily: 'Macaria',
                                   fontWeight: FontWeight.w700,
                                 ),
                               ),
-                        const SizedBox(width: 20.0),
+                        const SizedBox(width: 28.0),
                         const Center(
                           child: Icon(
                             Icons.circle_rounded,
@@ -87,7 +88,7 @@ class _NavBarState extends State<NavBar> {
                             color: Colors.white,
                           ),
                         ),
-                        const SizedBox(width: 20.0),
+                        const SizedBox(width: 28.0),
                         InkWell(
                           onTap: () {
                             Get.to(
@@ -100,7 +101,7 @@ class _NavBarState extends State<NavBar> {
                           child: const Text(
                             'MENU',
                             style: TextStyle(
-                              fontSize: 20.0,
+                              fontSize: 16.0,
                               color: Colors.white,
                               fontFamily: 'Macaria',
                               fontWeight: FontWeight.w700,
