@@ -1,3 +1,5 @@
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:html' as html;
 import 'package:aqua_studio/home/menu/menu_web.dart';
 import 'package:aqua_studio/shared/exports.dart';
 import 'package:flutter/material.dart';
@@ -33,14 +35,8 @@ class _NavBarState extends State<NavBar> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            GestureDetector(
-              onTap: () {
-                viewController.pageController.animateToPage(
-                  0,
-                  curve: Curves.easeInOutCubic,
-                  duration: const Duration(milliseconds: 1500),
-                );
-              },
+            InkWell(
+              onTap: () => html.window.location.reload(),
               child: SvgPicture.asset(
                 'assets/images/Black-04.svg',
                 color: Colors.white,
