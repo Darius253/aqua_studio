@@ -40,10 +40,10 @@ class _MenuWebState extends State<MenuWeb> {
                               await Future.delayed(
                                 const Duration(milliseconds: 100),
                               );
-                              viewController.itemScrollController.scrollTo(
-                                index: index,
+                              viewController.pageController.animateToPage(
+                                index,
                                 curve: Curves.easeInOutCubic,
-                                duration: const Duration(milliseconds: 100),
+                                duration: const Duration(milliseconds: 2000),
                               );
                             },
                             child: Text(
