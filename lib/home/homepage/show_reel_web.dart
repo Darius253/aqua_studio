@@ -22,10 +22,9 @@ class _ShowReelWebState extends State<ShowReelWeb> {
         }
       },
       child: Padding(
-        padding: const EdgeInsets.only(
-          top: 80.0,
-          left: 80.0,
-          right: 80.0,
+        padding: const EdgeInsets.symmetric(
+          vertical: 100.0,
+          horizontal: 80.0,
         ),
         child: Image.asset(
           Images.reel,
