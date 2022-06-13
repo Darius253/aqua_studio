@@ -39,8 +39,9 @@ class _HomeState extends State<Home> {
         children: [
           Expanded(
             child: PageView.builder(
-              scrollDirection: Axis.vertical,
               itemCount: pages.length,
+              scrollDirection: Axis.vertical,
+              controller: viewController.pageController,
               itemBuilder: (context, index) => pages[index],
             ),
           ),

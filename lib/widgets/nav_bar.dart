@@ -35,8 +35,8 @@ class _NavBarState extends State<NavBar> {
           children: [
             GestureDetector(
               onTap: () {
-                viewController.itemScrollController.scrollTo(
-                  index: 0,
+                viewController.pageController.animateToPage(
+                  0,
                   curve: Curves.easeInOutCubic,
                   duration: const Duration(milliseconds: 1500),
                 );
