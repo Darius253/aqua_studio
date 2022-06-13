@@ -24,6 +24,7 @@ class _MenuWebState extends State<MenuWeb> {
                 vertical: 100.0,
                 horizontal: 100,
               ),
+
               child: Entry.offset(
                 duration: const Duration(milliseconds: 500),
                 child: Column(
@@ -56,8 +57,8 @@ class _MenuWebState extends State<MenuWeb> {
                                       ? const Color.fromARGB(255, 70, 69, 69)
                                       : Colors.white,
                             ),
-                          ),
-                        ),
+
+             
                         const SizedBox(height: 60.0),
                       ],
                     );

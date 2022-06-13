@@ -21,15 +21,12 @@ class MenuScreen extends StatefulWidget {
 class _MenuScreenState extends State<MenuScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Colors.black,
       body: ReponsiveWidget(
-        largeScreen: const MenuWeb(),
-        mediumScreen: const MenuWeb(),
-        smallScreen: MenuMobile(
-            index: widget.index,
-            scrollToIndex: (pageIndex) => widget.scrollToIndex(pageIndex),
-            onClose: widget.onClose),
+        largeScreen: MenuWeb(),
+        mediumScreen: MenuWeb(),
+        smallScreen: MenuMobile(),
       ),
     );
   }

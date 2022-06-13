@@ -16,11 +16,11 @@ class ThirdScreen extends StatelessWidget {
           Row(
             children: [
               Container(
-                width: Get.width * 0.2,
-                height: Get.height * 0.26,
+                width: Get.width * 0.3,
+                height: Get.height * 0.3,
                 color: const Color.fromARGB(51, 51, 51, 51),
               ),
-              SizedBox(width: Get.width * 0.04),
+              SizedBox(width: Get.width * 0.1),
               const Text(
                 'SHORT FILMS',
                 style: TextStyle(
@@ -35,11 +35,11 @@ class ThirdScreen extends StatelessWidget {
           Row(
             children: [
               Container(
-                width: Get.width * 0.2,
-                height: Get.height * 0.26,
+                width: Get.width * 0.3,
+                height: Get.height * 0.3,
                 color: const Color.fromARGB(51, 51, 51, 51),
               ),
-              SizedBox(width: Get.width * 0.04),
+              SizedBox(width: Get.width * 0.1),
               const Text(
                 'LOGO ANIMATION',
                 style: TextStyle(

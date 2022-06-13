@@ -22,7 +22,7 @@ class SecondScreen extends StatelessWidget {
               softWrap: false,
               style: TextStyle(
                 height: 1.5,
-                fontSize: 45.0,
+                fontSize: 40.0,
                 fontFamily: 'Cocomat Ultra',
                 color: Color.fromARGB(255, 189, 185, 185),
               ),
