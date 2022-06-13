@@ -24,42 +24,44 @@ class _MenuWebState extends State<MenuWeb> {
                 vertical: 100.0,
                 horizontal: 100,
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: List.generate(pages.length, (index) {
-                  return Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      InkWell(
-                        onTap: () async {
-                          viewController.isMenuOpen.value = false;
-                          viewController.currentViewIndex.value = index;
-                          Get.back();
-                          await Future.delayed(
-                            const Duration(milliseconds: 300),
-                          );
-                          viewController.itemScrollController.scrollTo(
-                            index: index,
-                            curve: Curves.easeInOutCubic,
-                            duration: const Duration(milliseconds: 2000),
-                          );
-                        },
-                        child: Text(
-                          pages[index],
-                          style: TextStyle(
-                            fontSize: 50.0,
-                            fontFamily: 'Cocomat Ultra',
-                            color:
-                                index == viewController.currentViewIndex.value
-                                    ?const Color.fromARGB(255, 70, 69, 69)
+              child: Entry.offset(
+                duration: const Duration(milliseconds: 500),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: List.generate(pages.length, (index) {
+                    return Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        InkWell(
+                            onTap: () async {
+                              viewController.isMenuOpen.value = false;
+                              viewController.currentViewIndex.value = index;
+                              Get.back();
+                              await Future.delayed(
+                                const Duration(milliseconds: 100),
+                              );
+                              viewController.itemScrollController.scrollTo(
+                                index: index,
+                                curve: Curves.easeInOutCubic,
+                                duration: const Duration(milliseconds: 100),
+                              );
+                            },
+                            child: Text(
+                              pages[index],
+                              style: TextStyle(
+                                fontSize: 50.0,
+                                fontFamily: 'Cocomat Ultra',
+                                color: index ==
+                                        viewController.currentViewIndex.value
+                                    ? const Color.fromARGB(255, 70, 69, 69)
                                     : Colors.white,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 60.0),
-                    ],
-                  );
-                }),
+                              ),
+                            )),
+                        const SizedBox(height: 60.0),
+                      ],
+                    );
+                  }),
+                ),
               ),
             ),
           ),
