@@ -1,5 +1,6 @@
 // pub
 export 'package:get/get.dart';
+export 'package:entry/entry.dart';
 export 'package:flutter_svg/flutter_svg.dart';
 export 'package:delayed_display/delayed_display.dart';
 export 'package:visibility_detector/visibility_detector.dart';
