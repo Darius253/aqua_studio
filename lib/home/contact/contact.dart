@@ -22,7 +22,7 @@ class _ContactState extends State<Contact> {
         }
       },
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 50),
+        padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 70),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
