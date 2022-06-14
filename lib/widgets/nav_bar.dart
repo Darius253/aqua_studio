@@ -40,8 +40,7 @@ class _NavBarState extends State<NavBar> {
               child: SvgPicture.asset(
                 'assets/images/Black-04.svg',
                 color: Colors.white,
-                // width: 450,
-                height: Get.height * 0.06,
+                height: Get.height * 0.04,
               ),
             ),
             DelayedDisplay(
