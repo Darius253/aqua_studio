@@ -9,11 +9,7 @@ class OurHouse extends StatefulWidget {
 }
 
 class _OurHouseState extends State<OurHouse> {
-  List<Widget> pages = [
-    const FirstScreen(),
-    const SecondScreen(),
-    const ThirdScreen()
-  ];
+  List<Widget> pages = [const FirstChild(), const SecondChild()];
 
   final ViewController viewController = Get.find();
 
@@ -28,7 +24,8 @@ class _OurHouseState extends State<OurHouse> {
         }
       },
       child: SingleChildScrollView(
-          child: Column(children: pages, mainAxisSize: MainAxisSize.min)),
+        child: Column(children: pages, mainAxisSize: MainAxisSize.min),
+      ),
     );
   }
 }
