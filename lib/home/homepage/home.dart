@@ -38,11 +38,12 @@ class _HomeState extends State<Home> {
       body: Column(
         children: [
           Expanded(
-            child: PageView.builder(
+            child: ScrollablePositionedList.builder(
+              shrinkWrap: true,
               itemCount: pages.length,
-              scrollDirection: Axis.vertical,
-              controller: viewController.pageController,
               itemBuilder: (context, index) => pages[index],
+              itemPositionsListener: itemPositionsListener,
+              itemScrollController: viewController.itemScrollController,
             ),
           ),
           const ReponsiveWidget(
