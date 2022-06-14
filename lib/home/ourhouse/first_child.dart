@@ -54,7 +54,7 @@ class _FirstChildState extends State<FirstChild> {
                       'INTRODUCING A\nNEW AGE OF VISUAL\nIDENTITIES',
                       style: TextStyle(
                         height: 1.5,
-                        fontSize: 40.0,
+                        fontSize: 50.0,
                         fontFamily: 'Cocomat Ultra',
                         color: Color.fromARGB(255, 189, 185, 185),
                       ),
@@ -71,12 +71,7 @@ class _FirstChildState extends State<FirstChild> {
                       'A digital creative agency that designs and\ndevelops unique brand identies and tailor\nmade digital solutions.',
                       style: _textStyle,
                     ),
-                    SizedBox(height: Get.height * 0.04),
-                    Text(
-                      'A digital creative agency that designs and\ndevelops unique brand identities and tailor\nmade solutions.',
-                      style: _textStyle,
-                    ),
-                    SizedBox(height: Get.height * 0.04),
+                    SizedBox(height: Get.height * 0.15),
                     Text(
                       'We help our client from the definition of their\nstrategy to the realization of their digital\necosystem . At the heart of our approach is the\nconstant search for the juncture between\naesthetic beauty and technical performance.',
                       style: _textStyle,
