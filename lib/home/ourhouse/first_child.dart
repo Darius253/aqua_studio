@@ -54,7 +54,7 @@ class _FirstChildState extends State<FirstChild> {
                       'INTRODUCING A\nNEW AGE OF VISUAL\nIDENTITIES',
                       style: TextStyle(
                         height: 1.5,
-                        fontSize: 50.0,
+                        fontSize: 40.0,
                         fontFamily: 'Cocomat Ultra',
                         color: Color.fromARGB(255, 189, 185, 185),
                       ),
