@@ -38,8 +38,8 @@ class _MenuMobileState extends State<MenuMobile> {
                           await Future.delayed(
                             const Duration(milliseconds: 300),
                           );
-                          viewController.pageController.animateToPage(
-                            index,
+                          viewController.itemScrollController.scrollTo(
+                            index: index,
                             curve: Curves.easeInOutCubic,
                             duration: const Duration(milliseconds: 2000),
                           );
