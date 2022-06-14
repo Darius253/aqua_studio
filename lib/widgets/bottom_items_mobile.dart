@@ -27,8 +27,8 @@ class _BottomMobileItemsState extends State<BottomMobileItems> {
         children: [
           GestureDetector(
             onTap: () {
-              viewController.pageController.animateToPage(
-                0,
+              viewController.itemScrollController.scrollTo(
+                index: 0,
                 curve: Curves.easeInOutCubic,
                 duration: const Duration(milliseconds: 1500),
               );
